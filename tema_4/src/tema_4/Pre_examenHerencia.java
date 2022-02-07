@@ -10,7 +10,7 @@ abstract class LivingT {
 	String name;
 	
 
-	LivingT(){
+	public LivingT( ){
 	
 	name= "Josh";
 	}
@@ -41,10 +41,28 @@ abstract class LivingT {
 
 class Human extends LivingT{
 	
+	public Human(String name) {
+		name="James";
+	}
+
 	public void walk() {
 		
 		System.out.println("Está caminando...");
 	}
-	
+		
 }
+ class Monkey extends LivingT{
+	 
+	 public Monkey(String name) {
+			name="monkey";
+		}
 
+	 public void walk() {
+			
+			System.out.println("Está caminando mucho...");
+		}
+	
+	 
+	 
+}
+	
