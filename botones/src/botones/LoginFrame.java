@@ -81,7 +81,7 @@ public class LoginFrame extends JFrame implements ActionListener {
     	resetBoton.addActionListener(this);
     	exitBoton.addActionListener(this);
     }
-	@SuppressWarnings("deprecation")
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource( )==loginBoton) {
