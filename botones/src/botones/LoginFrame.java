@@ -1,5 +1,7 @@
 package botones;
 import javax.swing.*;
+import javax.swing.tree.DefaultTreeCellEditor.DefaultTextField;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,7 +14,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 	JLabel userLabel =new JLabel("USERNAME");
 	JLabel passwordLabel= new JLabel("PASSWORD");
 	JTextField userfield1= new JTextField();
-	JTextField passwordfield1= new JTextField();
+	JPasswordField passwordfield1= new JPasswordField();
 	JButton loginBoton= new JButton("LOGIN");
 	JButton resetBoton= new JButton("RESET");
 	JButton exitBoton=new JButton("EXIT");
@@ -40,7 +42,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 		userfield1.setBounds(110,20,300,30);
 		
 	
-		passwordfield1=new JTextField();
+		passwordfield1=new JPasswordField();
 		passwordfield1.setBounds(110,130,200,30);
 		
         //botones
@@ -79,16 +81,29 @@ public class LoginFrame extends JFrame implements ActionListener {
     	resetBoton.addActionListener(this);
     	exitBoton.addActionListener(this);
     }
+	@SuppressWarnings("deprecation")
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource( )==loginBoton) {
 			
 			System.out.println("PROBANDO...");
+			String userText;
+			String pwdText;
+			userText= userfield1.getText();
+			pwdText=passwordfield1.getText();
 			
+			if(userText.equalsIgnoreCase("sara")&&pwdText.equalsIgnoreCase("12345")) {
+				
+				JOptionPane.showMessageDialog(this, "Login Successful");
+			}else {
+				JOptionPane.showMessageDialog(this, "Invalid Username or Password");
+			}
 		}
 		if(e.getSource()==resetBoton) {
 			
 			System.out.println("PROBANDO...");
+	        userfield1.setText("");
+	        passwordfield1.setText("");
 		}
 		if(e.getSource()==exitBoton) {
 			
