@@ -18,6 +18,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 	JButton loginBoton= new JButton("LOGIN");
 	JButton resetBoton= new JButton("RESET");
 	JButton exitBoton=new JButton("EXIT");
+	JCheckBox showPassword= new JCheckBox("show password");
 	LoginFrame(){
 		setLayoutManager();
 		setLocationAndSize();
@@ -48,18 +49,19 @@ public class LoginFrame extends JFrame implements ActionListener {
         //botones
 		
 		//Button
-				loginBoton= new JButton("Login");
+				
 				loginBoton.setBounds(300,250,100,30);
 				
 				loginBoton.addActionListener(this);
 				
-				resetBoton= new JButton("Reset");
+				
 				resetBoton.setBounds(300,200,100,30);
 				
 				resetBoton.addActionListener(this);
 				
-				exitBoton=new JButton("Exit");
+				
 				exitBoton.setBounds(300,300,100,30);
+				showPassword.setBounds(300,350,100,30);
 				
 				setVisible(true);
 		
@@ -73,6 +75,7 @@ public class LoginFrame extends JFrame implements ActionListener {
     	container.add(loginBoton);
     	container.add(resetBoton);
     	container.add(exitBoton);
+    	container.add(showPassword);
     	setVisible(true);
     }
     public void addLayoutEvent() {
@@ -80,6 +83,7 @@ public class LoginFrame extends JFrame implements ActionListener {
     	loginBoton.addActionListener(this);
     	resetBoton.addActionListener(this);
     	exitBoton.addActionListener(this);
+    	showPassword.addActionListener(this);
     }
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -108,6 +112,13 @@ public class LoginFrame extends JFrame implements ActionListener {
 		if(e.getSource()==exitBoton) {
 			
 			System.exit(0);
+		}
+		if(e.getSource()==showPassword) {
+			if(showPassword.isSelected()) {
+				passwordfield1.setEchoChar((char)0);
+			}else {
+				passwordfield1.setEchoChar('*');
+			}
 		}
 	}
 
