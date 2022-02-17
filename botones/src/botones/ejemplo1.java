@@ -6,6 +6,7 @@ public class ejemplo1 extends JFrame implements ActionListener {
 	
 	JButton boton1;
 	JButton boton2;
+	JButton boton3;
 	//Constructor
 	public ejemplo1() {
 		//Layout absoluto
@@ -28,6 +29,11 @@ public class ejemplo1 extends JFrame implements ActionListener {
 		boton2.setBounds(300,200,100,30);
 		add(boton2);
 		boton2.addActionListener(this);
+
+		boton3= new JButton("Update");
+		boton3.setBounds(300,150,100,30);
+		add(boton3);
+		boton3.addActionListener(this);
 	}
 		
 	public void actionPerformed(ActionEvent e) {
@@ -41,7 +47,13 @@ public class ejemplo1 extends JFrame implements ActionListener {
 			
 			System.out.println("Holaaa");
 		}
+		
+		if(e.getSource()==boton3) {
+			
+			System.out.println("Llamando a otra clase");
+		}
 	}
+	
 	public static void main(String[]args) {
 		
 		new ejemplo1();
