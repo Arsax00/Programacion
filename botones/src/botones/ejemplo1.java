@@ -9,6 +9,7 @@ public class ejemplo1 extends JFrame implements ActionListener {
 	JButton boton3;
 	
 	JLabel l1;
+	JTextField textfield1;
 	//Constructor
 	public ejemplo1() {
 		//Layout absoluto
@@ -23,6 +24,10 @@ public class ejemplo1 extends JFrame implements ActionListener {
 		l1=new JLabel("Programación DAM");
 		l1.setBounds(10,20,300,30);
 		add(l1);
+		//Text
+		textfield1=new JTextField();
+		textfield1.setBounds(130,25,150,20);
+		add(textfield1);
 		//Button
 		boton1= new JButton("Finalizar");
 		boton1.setBounds(300,250,100,30);
@@ -57,6 +62,9 @@ public class ejemplo1 extends JFrame implements ActionListener {
 		if(e.getSource()==boton3) {
 			
 			System.out.println("Llamando a otra clase");
+			
+		    NumPos obj1 =new NumPos();
+		    NumPos.main();
 		}
 	}
 	
