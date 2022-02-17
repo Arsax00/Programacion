@@ -7,6 +7,8 @@ public class ejemplo1 extends JFrame implements ActionListener {
 	JButton boton1;
 	JButton boton2;
 	JButton boton3;
+	
+	JLabel l1;
 	//Constructor
 	public ejemplo1() {
 		//Layout absoluto
@@ -17,6 +19,10 @@ public class ejemplo1 extends JFrame implements ActionListener {
 		setTitle("Ejemplo 1: Botón");
 		//Cerrar proceso al cerrar la ventana
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		//Label
+		l1=new JLabel("Programación DAM");
+		l1.setBounds(10,20,300,30);
+		add(l1);
 		//Button
 		boton1= new JButton("Finalizar");
 		boton1.setBounds(300,250,100,30);
