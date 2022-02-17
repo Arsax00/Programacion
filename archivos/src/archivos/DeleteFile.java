@@ -4,7 +4,7 @@ public class DeleteFile {
 
 	public static void main(String[]args){
 		
-		File myObj= new File("Files/filename.txt");
+		File myObj= new File("test\\texto.txt");
 		
 		if(myObj.delete()) {
 			
