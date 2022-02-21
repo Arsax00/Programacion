@@ -74,4 +74,7 @@ public class ejemplo1 extends JFrame implements ActionListener {
 		System.out.println();
 	}
 	
+	
+	
+	
 }
