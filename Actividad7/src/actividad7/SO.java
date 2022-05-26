@@ -3,12 +3,20 @@ package actividad7;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
+/**
+ * 
+ * @author Invitado21-22-11
+ *
+ *@version 1.0
+ */
 public class SO {
-	
+
 private static String OS = System.getProperty("os.name").toLowerCase();
 
-
+/**
+ *
+ * @param args
+ */
 public static void main(String []args) {
 	
 	System.out.println("os.name "+OS);
@@ -50,11 +58,19 @@ if(!directorio.exists())
     }
 
 }
+/**
+ * 
+ * @return
+ */
 	public static boolean isWindows() {
 		
 		return(OS.indexOf("windows")>=0);
 				
 	}
+	/**
+	 * 
+	 * @return
+	 */
 	public static boolean isLinux () {
 		return (OS.indexOf("linux") >= 0);
 	}
