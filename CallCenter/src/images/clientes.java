@@ -306,7 +306,7 @@ public class clientes extends JFrame {
 		JButton btnRegistro = new JButton("Registrar");
 		btnRegistro.setBackground(new Color(123, 104, 238));
 		btnRegistro.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnRegistro.setBounds(221, 527, 90, 40);
+		btnRegistro.setBounds(221, 512, 90, 40);
 		contentPane.add(btnRegistro);
 		
 		for(int i=1;i<=31;i++) {
