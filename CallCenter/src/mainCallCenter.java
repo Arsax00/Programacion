@@ -10,6 +10,9 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.border.SoftBevelBorder;
+
+import images.clientes;
+
 import javax.swing.border.BevelBorder;
 import java.awt.SystemColor;
 import java.awt.event.KeyAdapter;
@@ -24,10 +27,7 @@ import java.awt.Point;
 public class mainCallCenter extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textFieldUser;
-	private JTextField textFieldContraseña;
     static int xMouse,yMouse;
-    private JTextField textFieldPedidos;
 	/**
 	 * Launch the application.
 	 */
@@ -52,7 +52,7 @@ public class mainCallCenter extends JFrame {
 		setUndecorated(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 866, 590);
+		setBounds(100, 100, 857, 578);
 		contentPane = new JPanel();
 		contentPane.setLocation(new Point(40, 40));
 		contentPane.setBackground(SystemColor.inactiveCaption);
@@ -62,56 +62,60 @@ public class mainCallCenter extends JFrame {
 		
 		JLabel lbllogo = new JLabel("");
 		lbllogo.setIcon(new ImageIcon(mainCallCenter.class.getResource("/images/logo1.png")));
-		lbllogo.setBounds(386, 52, 50, 60);
+		lbllogo.setBounds(386, 77, 50, 60);
 		contentPane.add(lbllogo);
 		
-		JPanel header = new JPanel();
-		header.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	
 		
+		JLabel lblNewLabel = new JLabel("Call Center");
+		lblNewLabel.setForeground(new Color(123, 104, 238));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(350, 135, 122, 14);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBounds(670, 40, 196, 550);
+		contentPane.add(lblNewLabel_1);
+		
+		JPanel header = new JPanel();
 		header.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				xMouse=e.getX();
-				yMouse=e.getY();
-				
+				xMouse = e.getX();
+				yMouse = e.getY();
+
 			}
 		});
-		header.addMouseMotionListener(new MouseMotionAdapter() {
+		 header.addMouseMotionListener(new MouseMotionAdapter() {
 			@Override
 			public void mouseDragged(MouseEvent e) {
-				int y= e.getXOnScreen();
-				int x= e.getYOnScreen();
-				setLocation(x - xMouse,y - yMouse);
-				
+				int x = e.getXOnScreen();
+				int y = e.getYOnScreen();
+				setLocation(x - xMouse, y - yMouse);
+
 			}
-		});
 		
-		header.setBackground(SystemColor.inactiveCaption);
-		header.setBorder(new LineBorder(new Color(0, 0, 0)));
-		header.setBounds(0, 0, 866, 41);
-		contentPane.add(header);
+		});
 		header.setLayout(null);
+		header.setBorder(null);
+		header.setBackground(SystemColor.inactiveCaption);
+		header.setBounds(0, 0, 866, 40);
+		contentPane.add(header);
 		
 		JPanel Exit = new JPanel();
+		Exit.setLayout(null);
 		Exit.setBackground(SystemColor.inactiveCaption);
 		Exit.setBounds(0, 0, 48, 41);
 		header.add(Exit);
-		Exit.setLayout(null);
 		
 		JLabel lblExit = new JLabel("X");
-			
-		lblExit.setBackground(SystemColor.inactiveCaption);
-		lblExit.setBorder(new LineBorder(new Color(0, 0, 0)));
 		lblExit.setHorizontalAlignment(SwingConstants.CENTER);
 		lblExit.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblExit.setBounds(1, 0, 46, 41);
+		lblExit.setBorder(new LineBorder(new Color(0, 0, 0)));
+		lblExit.setBackground(SystemColor.inactiveCaption);
+		lblExit.setBounds(0, 0, 47, 41);
 		Exit.add(lblExit);
-		
-		JLabel lblCliente = new JLabel("Cliente");
-		lblCliente.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblCliente.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCliente.setBounds(48, 0, 62, 41);
-		header.add(lblCliente);
 		lblExit.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -137,68 +141,65 @@ public class mainCallCenter extends JFrame {
 				lblExit.setForeground(Color.black);
 			}
 		});
+		JPanel cliente = new JPanel();
+		cliente.setLayout(null);
+		cliente.setBorder(new EmptyBorder(0, 0, 0, 0));
+		cliente.setBackground(SystemColor.inactiveCaption);
+		cliente.setBounds(148, 0, 110, 41);
+		header.add(cliente);
 		
-	
+		JLabel lblClientesHeader = new JLabel("Cliente");
+		lblClientesHeader.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			    setVisible(false);
+			    clientes c= new clientes();
+			    c.setVisible(true);
+			}
+		});
+		lblClientesHeader.setHorizontalAlignment(SwingConstants.CENTER);
+		lblClientesHeader.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblClientesHeader.setBackground(SystemColor.inactiveCaption);
+		lblClientesHeader.setBounds(0, 0, 108, 41);
+		cliente.add(lblClientesHeader);
 		
-		JLabel lblNewLabel = new JLabel("Call Center");
-		lblNewLabel.setForeground(new Color(123, 104, 238));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(350, 110, 122, 14);
-		contentPane.add(lblNewLabel);
 		
-		JLabel lblClientes = new JLabel("Clientes");
-		lblClientes.setFont(new Font("Arial", Font.BOLD, 17));
-		lblClientes.setBounds(58, 182, 86, 26);
-		contentPane.add(lblClientes);
+		JPanel proveedores = new JPanel();
+		proveedores.setLayout(null);
+		proveedores.setBackground(SystemColor.inactiveCaption);
+		proveedores.setBounds(298, 0, 125, 41);
+		header.add(proveedores);
 		
-		JLabel lblUsuario = new JLabel("Usuario:");
-		lblUsuario.setFont(new Font("Arial", Font.BOLD, 13));
-		lblUsuario.setBounds(58, 233, 83, 14);
-		contentPane.add(lblUsuario);
+		JLabel lblProveedoresHeader = new JLabel("Proveedores");
+		lblProveedoresHeader.setHorizontalAlignment(SwingConstants.CENTER);
+		lblProveedoresHeader.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblProveedoresHeader.setBounds(0, 0, 125, 41);
+		proveedores.add(lblProveedoresHeader);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(670, 40, 196, 550);
-		contentPane.add(lblNewLabel_1);
+		JPanel Pedidos = new JPanel();
+		Pedidos.setLayout(null);
+		Pedidos.setBackground(SystemColor.inactiveCaption);
+		Pedidos.setBounds(456, 0, 119, 41);
+		header.add(Pedidos);
 		
-		textFieldUser = new JTextField();
-		textFieldUser.setBounds(135, 227, 127, 20);
-		contentPane.add(textFieldUser);
-		textFieldUser.setColumns(10);
+		JLabel lblPedidosHeader = new JLabel("Pedidos");
+		lblPedidosHeader.setHorizontalTextPosition(SwingConstants.CENTER);
+		lblPedidosHeader.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPedidosHeader.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblPedidosHeader.setBounds(0, 0, 119, 41);
+		Pedidos.add(lblPedidosHeader);
 		
-		JLabel lblDireccion = new JLabel("Dirección:");
-		lblDireccion.setFont(new Font("Arial", Font.BOLD, 13));
-		lblDireccion.setBounds(58, 276, 83, 14);
-		contentPane.add(lblDireccion);
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBackground(SystemColor.inactiveCaption);
+		panel.setBounds(619, 0, 125, 41);
+		header.add(panel);
 		
-		textFieldContraseña = new JTextField();
-		textFieldContraseña.setColumns(10);
-		textFieldContraseña.setBounds(135, 270, 127, 20);
-		contentPane.add(textFieldContraseña);
-		
-		JLabel lblProveedores = new JLabel("Proveedores");
-		lblProveedores.setFont(new Font("Arial", Font.BOLD, 17));
-		lblProveedores.setBounds(465, 179, 117, 26);
-		contentPane.add(lblProveedores);
-		
-		JLabel lblProductos = new JLabel("Pedidos");
-		lblProductos.setFont(new Font("Arial", Font.BOLD, 17));
-		lblProductos.setBounds(58, 358, 117, 26);
-		contentPane.add(lblProductos);
-		
-		JLabel lblPedidos = new JLabel("Nombre:");
-		lblPedidos.setFont(new Font("Arial", Font.BOLD, 13));
-		lblPedidos.setBounds(58, 406, 83, 14);
-		contentPane.add(lblPedidos);
-		
-		textFieldPedidos = new JTextField();
-		textFieldPedidos.setColumns(10);
-		textFieldPedidos.setBounds(135, 403, 127, 20);
-		contentPane.add(textFieldPedidos);
-		
-		JLabel lblDevoluciones = new JLabel("Devoluciones");
-		lblDevoluciones.setFont(new Font("Arial", Font.BOLD, 17));
-		lblDevoluciones.setBounds(465, 358, 117, 26);
-		contentPane.add(lblDevoluciones);
+		JLabel lblDevolucionesHeader = new JLabel("Devoluciones");
+		lblDevolucionesHeader.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDevolucionesHeader.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblDevolucionesHeader.setBounds(0, 0, 125, 41);
+		panel.add(lblDevolucionesHeader);
 	}
 }
