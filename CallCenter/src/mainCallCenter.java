@@ -27,7 +27,7 @@ public class mainCallCenter extends JFrame {
 	private JTextField textFieldUser;
 	private JTextField textFieldContraseña;
     static int xMouse,yMouse;
-    private JTextField textFieldNombreProveedor;
+    private JTextField textFieldPedidos;
 	/**
 	 * Launch the application.
 	 */
@@ -62,7 +62,7 @@ public class mainCallCenter extends JFrame {
 		
 		JLabel lbllogo = new JLabel("");
 		lbllogo.setIcon(new ImageIcon(mainCallCenter.class.getResource("/images/logo1.png")));
-		lbllogo.setBounds(120, 71, 50, 60);
+		lbllogo.setBounds(386, 52, 50, 60);
 		contentPane.add(lbllogo);
 		
 		JPanel header = new JPanel();
@@ -106,6 +106,12 @@ public class mainCallCenter extends JFrame {
 		lblExit.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblExit.setBounds(1, 0, 46, 41);
 		Exit.add(lblExit);
+		
+		JLabel lblCliente = new JLabel("Cliente");
+		lblCliente.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblCliente.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCliente.setBounds(48, 0, 62, 41);
+		header.add(lblCliente);
 		lblExit.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -138,17 +144,17 @@ public class mainCallCenter extends JFrame {
 		lblNewLabel.setForeground(new Color(123, 104, 238));
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(87, 129, 122, 14);
+		lblNewLabel.setBounds(350, 110, 122, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblClientes = new JLabel("Clientes");
 		lblClientes.setFont(new Font("Arial", Font.BOLD, 17));
-		lblClientes.setBounds(53, 182, 86, 26);
+		lblClientes.setBounds(58, 182, 86, 26);
 		contentPane.add(lblClientes);
 		
 		JLabel lblUsuario = new JLabel("Usuario:");
 		lblUsuario.setFont(new Font("Arial", Font.BOLD, 13));
-		lblUsuario.setBounds(34, 233, 83, 14);
+		lblUsuario.setBounds(58, 233, 83, 14);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
@@ -156,33 +162,43 @@ public class mainCallCenter extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		textFieldUser = new JTextField();
-		textFieldUser.setBounds(124, 230, 127, 20);
+		textFieldUser.setBounds(135, 227, 127, 20);
 		contentPane.add(textFieldUser);
 		textFieldUser.setColumns(10);
 		
 		JLabel lblDireccion = new JLabel("Dirección:");
 		lblDireccion.setFont(new Font("Arial", Font.BOLD, 13));
-		lblDireccion.setBounds(34, 276, 83, 14);
+		lblDireccion.setBounds(58, 276, 83, 14);
 		contentPane.add(lblDireccion);
 		
 		textFieldContraseña = new JTextField();
 		textFieldContraseña.setColumns(10);
-		textFieldContraseña.setBounds(124, 273, 127, 20);
+		textFieldContraseña.setBounds(135, 270, 127, 20);
 		contentPane.add(textFieldContraseña);
 		
-		JLabel lblProveedores = new JLabel("Proveedores:");
+		JLabel lblProveedores = new JLabel("Proveedores");
 		lblProveedores.setFont(new Font("Arial", Font.BOLD, 17));
-		lblProveedores.setBounds(464, 182, 117, 26);
+		lblProveedores.setBounds(465, 179, 117, 26);
 		contentPane.add(lblProveedores);
 		
-		JLabel lblNombreProveedor = new JLabel("Nombre:");
-		lblNombreProveedor.setFont(new Font("Arial", Font.BOLD, 13));
-		lblNombreProveedor.setBounds(464, 230, 83, 14);
-		contentPane.add(lblNombreProveedor);
+		JLabel lblProductos = new JLabel("Pedidos");
+		lblProductos.setFont(new Font("Arial", Font.BOLD, 17));
+		lblProductos.setBounds(58, 358, 117, 26);
+		contentPane.add(lblProductos);
 		
-		textFieldNombreProveedor = new JTextField();
-		textFieldNombreProveedor.setColumns(10);
-		textFieldNombreProveedor.setBounds(554, 227, 127, 20);
-		contentPane.add(textFieldNombreProveedor);
+		JLabel lblPedidos = new JLabel("Nombre:");
+		lblPedidos.setFont(new Font("Arial", Font.BOLD, 13));
+		lblPedidos.setBounds(58, 406, 83, 14);
+		contentPane.add(lblPedidos);
+		
+		textFieldPedidos = new JTextField();
+		textFieldPedidos.setColumns(10);
+		textFieldPedidos.setBounds(135, 403, 127, 20);
+		contentPane.add(textFieldPedidos);
+		
+		JLabel lblDevoluciones = new JLabel("Devoluciones");
+		lblDevoluciones.setFont(new Font("Arial", Font.BOLD, 17));
+		lblDevoluciones.setBounds(465, 358, 117, 26);
+		contentPane.add(lblDevoluciones);
 	}
 }
